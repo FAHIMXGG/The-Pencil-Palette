@@ -4,6 +4,7 @@ import {
 import Main from "../Layouts/Main";
 import Login from "../Page/Login/Login";
 import SignUp from "../Page/signUp/signUp";
+import ClassesPage from "../Page/ClassesPage/ClassesPage";
 
 export const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
             {
                 path: 'signUp',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: 'course',
+                element: <ClassesPage></ClassesPage>
             }
         ]
     }

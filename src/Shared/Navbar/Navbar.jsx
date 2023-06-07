@@ -15,6 +15,7 @@ const Navbar = () => {
                 <div className="flex-1">
                     <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
                 </div>
+                <Link to="/course">Course</Link>
                 {
                     user ? <>
                         <span>{user?.displayName}</span>
