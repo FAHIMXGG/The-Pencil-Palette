@@ -4,7 +4,7 @@ import CourseCard from './CourseCard';
 
 const ClassesPage = () => {
     const [courses] = UseCourse()
-    console.log(courses);
+    //console.log(courses);
     return (
         <div>
             <div>

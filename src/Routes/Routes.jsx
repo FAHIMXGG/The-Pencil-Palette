@@ -8,6 +8,7 @@ import ClassesPage from "../Page/ClassesPage/ClassesPage";
 import Dashboard from "../Page/DashBoard/Dashboard";
 import Course from "../Page/DashBoard/Course/Course";
 import Add from "../Page/DashBoard/Add";
+import MyCart from "../Page/DashBoard/MyCart";
 
 export const router = createBrowserRouter([
     {
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
             {
                 path: 'add',
                 element: <Add></Add>
+            },
+            {
+                path: 'cart',
+                element: <MyCart></MyCart>
             }
         ]
     }
