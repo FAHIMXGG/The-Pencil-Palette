@@ -53,7 +53,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                 <Link to="/course">Course</Link>
-                <Link>
+                <Link to="/dashboard/cart">
                         <button className='btn gap-2'>
                             Cart
                             <div className='badge badge-secondary'>+{cart?.length || 0}</div>

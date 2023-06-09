@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import { FaHamburger, FaShoppingCart } from 'react-icons/fa';
+import useCart from '../../hooks/useCart';
 
 const Dashboard = () => {
+    const [cart] = useCart()
     return (
         <div>
             <div class="drawer lg:drawer-open">
@@ -16,16 +18,16 @@ const Dashboard = () => {
                     <label for="my-drawer-2" class="drawer-overlay"></label>
                     <ul class="menu p-4 w-80 h-full bg-base-200 text-base-content">
 
-                        <li><Link to="/">Home</Link></li>
+                        <li><NavLink to="/">Home</NavLink></li>
 
-                        <li><Link to="/dashboard/cart"><FaShoppingCart></FaShoppingCart> Cart</Link></li>
-                        <li><Link to="/dashboard/add">Add</Link></li>
+                        <li><NavLink to="/dashboard/cart"><FaShoppingCart></FaShoppingCart>Cart +{cart?.length}</NavLink></li>
+                        <li><NavLink to="/dashboard/add">Add</NavLink></li>
                         <div className='divider'></div>
 
-                        <li><Link to= "/">h</Link></li>
-                        <li><Link to= "/">h</Link></li>
-                        <li><Link to= "/">h</Link></li>
-                        <li><Link to= "/">h</Link></li>
+                        <li><NavLink to= "/">h</NavLink></li>
+                        <li><NavLink to= "/">h</NavLink></li>
+                        <li><NavLink to= "/">h</NavLink></li>
+                        <li><NavLink to= "/">h</NavLink></li>
                     </ul>
 
                 </div>
