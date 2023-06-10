@@ -27,6 +27,7 @@ const Dashboard = () => {
                                 <li><NavLink to="/">Admin</NavLink></li><li><NavLink to="/dashboard/cart"><FaShoppingCart></FaShoppingCart>Cart +{cart?.length}</NavLink></li>
                                 <li><NavLink to="/dashboard/add">Add</NavLink></li>
                                 <li><NavLink to="/dashboard/allusers">Users</NavLink></li>
+                                <li><NavLink to="/dashboard/courseManage">Course Manage</NavLink></li>
                             </> : <>
                                 <li><NavLink to="/">Home</NavLink></li><li><NavLink to="/dashboard/cart"><FaShoppingCart></FaShoppingCart>Cart +{cart?.length}</NavLink></li>
                                 <li><NavLink to="/dashboard/add">Add</NavLink></li>

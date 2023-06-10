@@ -7,7 +7,7 @@ const MyCart = () => {
     const [cart, refetch] = useCart()
     const total = cart.reduce((sum, item) => item.price + sum, 0)
 
-   const handleDelete = data =>{
+    const handleDelete = data => {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -16,14 +16,13 @@ const MyCart = () => {
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/carts/${data._id}`, {
-                    method: 'DELETE'
-                })
-                .then(res => res.json())
-                    .then(data => {
-                        if (data.deletedCount > 0) {
+
+                axiosSecure.delete(`/menu/${item._id}`)
+                    .then(res => {
+                        console.log('deleted res', res.data);
+                        if (res.data.deletedCount > 0) {
                             refetch();
                             Swal.fire(
                                 'Deleted!',
@@ -32,8 +31,9 @@ const MyCart = () => {
                             )
                         }
                     })
+
             }
-          })
+        })
     }
 
     return (
@@ -59,7 +59,7 @@ const MyCart = () => {
                     <tbody>
                         {
                             cart.map((data, index) => <tr
-                                key = {data._id}
+                                key={data._id}
                             >
                                 <td>
                                     {
@@ -84,14 +84,14 @@ const MyCart = () => {
                                 </td>
                                 <td>${data.price}</td>
                                 <td>
-                                    <button onClick={() =>handleDelete(data)} className="btn btn-ghost btn-xs bg-red-800"><FaTrashAlt></FaTrashAlt></button>
+                                    <button onClick={() => handleDelete(data)} className="btn btn-ghost btn-xs bg-red-800"><FaTrashAlt></FaTrashAlt></button>
                                 </td>
                             </tr>)
                         }
-                        
+
 
                     </tbody>
-                   
+
 
                 </table>
             </div>

@@ -11,6 +11,7 @@ import Add from "../Page/DashBoard/Add";
 import MyCart from "../Page/DashBoard/MyCart";
 import PrivateRoute from "./PrivateRoute";
 import AllUsers from "../Page/DashBoard/AllUsers/AllUsers";
+import AdminRoute from "./AdminRoute";
 
 export const router = createBrowserRouter([
     {
@@ -37,11 +38,11 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: 'courseManage',
-                element: <Course></Course>
+                element: <AdminRoute><Course></Course></AdminRoute>
             },
             {
                 path: 'add',
-                element: <Add></Add>
+                element: <AdminRoute><Add></Add></AdminRoute>
             },
             {
                 path: 'cart',
