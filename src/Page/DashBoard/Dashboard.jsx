@@ -5,34 +5,43 @@ import useCart from '../../hooks/useCart';
 
 const Dashboard = () => {
     const [cart] = useCart()
+
+    const isAdmin = true;
+
     return (
         <div>
-            <div class="drawer lg:drawer-open">
-                <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-                <div class="drawer-content flex flex-col items-center justify-center">
-                <Outlet></Outlet>
-                    <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+            <div className="drawer lg:drawer-open">
+                <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+                <div className="drawer-content flex flex-col items-center justify-center">
+                    <Outlet></Outlet>
+                    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
                 </div>
-                <div class="drawer-side">
-                    <label for="my-drawer-2" class="drawer-overlay"></label>
-                    <ul class="menu p-4 w-80 h-full bg-base-200 text-base-content">
+                <div className="drawer-side">
+                    <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+                    <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+                        {
+                            isAdmin ? <>
+                                <li><NavLink to="/">Admin</NavLink></li><li><NavLink to="/dashboard/cart"><FaShoppingCart></FaShoppingCart>Cart +{cart?.length}</NavLink></li>
+                                <li><NavLink to="/dashboard/add">Add</NavLink></li>
+                                <li><NavLink to="/dashboard/allusers">Users</NavLink></li>
+                            </> : <>
+                                <li><NavLink to="/">Home</NavLink></li><li><NavLink to="/dashboard/cart"><FaShoppingCart></FaShoppingCart>Cart +{cart?.length}</NavLink></li>
+                                <li><NavLink to="/dashboard/add">Add</NavLink></li>
+                            </>
+                        }
 
-                        <li><NavLink to="/">Home</NavLink></li>
-
-                        <li><NavLink to="/dashboard/cart"><FaShoppingCart></FaShoppingCart>Cart +{cart?.length}</NavLink></li>
-                        <li><NavLink to="/dashboard/add">Add</NavLink></li>
                         <div className='divider'></div>
 
-                        <li><NavLink to= "/">h</NavLink></li>
-                        <li><NavLink to= "/">h</NavLink></li>
-                        <li><NavLink to= "/">h</NavLink></li>
-                        <li><NavLink to= "/">h</NavLink></li>
+                        <li><NavLink to="/">h</NavLink></li>
+                        <li><NavLink to="/">h</NavLink></li>
+                        <li><NavLink to="/">h</NavLink></li>
+                        <li><NavLink to="/">h</NavLink></li>
                     </ul>
 
                 </div>
             </div>
-            
+
 
 
         </div>

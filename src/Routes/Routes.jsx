@@ -9,6 +9,8 @@ import Dashboard from "../Page/DashBoard/Dashboard";
 import Course from "../Page/DashBoard/Course/Course";
 import Add from "../Page/DashBoard/Add";
 import MyCart from "../Page/DashBoard/MyCart";
+import PrivateRoute from "./PrivateRoute";
+import AllUsers from "../Page/DashBoard/AllUsers/AllUsers";
 
 export const router = createBrowserRouter([
     {
@@ -31,7 +33,7 @@ export const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
             {
                 path: 'courseManage',
@@ -44,6 +46,10 @@ export const router = createBrowserRouter([
             {
                 path: 'cart',
                 element: <MyCart></MyCart>
+            },
+            {
+                path: 'allusers',
+                element: <AllUsers></AllUsers>
             }
         ]
     }

@@ -18,31 +18,45 @@ const SignUp = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 updateUserData(data.name, data.photoURL)
-                .then(() => {
-                    console.log('user profile info updated')
-                    reset();
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'User created successfully.',
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                    navigate('/');
-
-                })
-                .catch(error => console.log(error))
+                    .then(() => {
+                        const saveUser = { name: data.name, email: data.email }
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                        .then(res => res.json())
+                        .then(data =>{
+                            if(data.insertedId){
+                                reset();
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'User created successfully.',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                                navigate('/');
+        
+                            }
+                        })
+                        
+                       
+                    })
+                    .catch(error => console.log(error))
             })
     };
 
     return (
         <>
-            
+
             <div className="hero min-h-screen bg-base-200 rounded-xl">
                 <div className="hero-content flex-row ">
-                        <h1>SingUp</h1>
-                        <img className="w-40" src="https://adrack.com/wp-content/uploads/2021/12/signup.png" alt="" />
-                    
+                    <h1>SingUp</h1>
+                    <img className="w-40" src="https://adrack.com/wp-content/uploads/2021/12/signup.png" alt="" />
+
                     <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <div className="form-control">
