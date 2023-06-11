@@ -3,7 +3,7 @@ import {
   } from "react-router-dom";
 import Main from "../Layouts/Main";
 import Login from "../Page/Login/Login";
-import SignUp from "../Page/signUp/signUp";
+//import SignUp from "../Page/signUp/signUp";
 import ClassesPage from "../Page/ClassesPage/ClassesPage";
 import Dashboard from "../Page/DashBoard/Dashboard";
 import Course from "../Page/DashBoard/Course/Course";
@@ -13,6 +13,9 @@ import PrivateRoute from "./PrivateRoute";
 import AllUsers from "../Page/DashBoard/AllUsers/AllUsers";
 import AdminRoute from "./AdminRoute";
 import Payment from "../Page/DashBoard/Payment/Payment";
+import Instructors from "../Page/Instructors/Instructors";
+import SignUp from "../Page/SignUp/SignUp";
+import InsRoute from "./InsRoute";
 
 export const router = createBrowserRouter([
     {
@@ -30,6 +33,10 @@ export const router = createBrowserRouter([
             {
                 path: 'course',
                 element: <ClassesPage></ClassesPage>
+            },
+            {
+                path: 'Instructors',
+                element: <Instructors></Instructors>
             }
         ]
     },
@@ -43,7 +50,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'add',
-                element: <AdminRoute><Add></Add></AdminRoute>
+                element: <Add></Add>
             },
             {
                 path: 'cart',

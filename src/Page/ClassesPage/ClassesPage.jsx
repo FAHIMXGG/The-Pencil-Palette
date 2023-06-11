@@ -7,7 +7,7 @@ const ClassesPage = () => {
     //console.log(courses);
     return (
         <div>
-            <div>
+            <div className='grid grid-cols-3'>
                 {
                     courses.map(course => <CourseCard
                         key={course._id}
