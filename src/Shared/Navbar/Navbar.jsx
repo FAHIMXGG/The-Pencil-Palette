@@ -2,13 +2,14 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import useCart from '../../hooks/useCart';
+import useIns from '../../hooks/useIns';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     const [cart] = useCart()
     console.log(cart)
 
-    
+    const [isInstructor] = useIns();
 
     const handleLogOut = () => {
         logOut()

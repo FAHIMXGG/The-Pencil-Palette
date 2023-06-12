@@ -20,11 +20,13 @@ import InsRoute from "./InsRoute";
 import HomeLayouts from "../Layouts/HomeLayouts";
 import History from "../Page/DashBoard/History";
 import Enrolled from "../Page/DashBoard/Enrolled";
+import ErrorPage from "../Page/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -63,7 +65,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'add',
-                element: <Add></Add>
+                element: <InsRoute><Add></Add></InsRoute>
             },
             {
                 path: 'cart',
