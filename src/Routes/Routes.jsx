@@ -1,4 +1,5 @@
 import {
+    Navigate,
     createBrowserRouter,
   } from "react-router-dom";
 import Main from "../Layouts/Main";
@@ -16,12 +17,20 @@ import Payment from "../Page/DashBoard/Payment/Payment";
 import Instructors from "../Page/Instructors/Instructors";
 import SignUp from "../Page/SignUp/SignUp";
 import InsRoute from "./InsRoute";
+import HomeLayouts from "../Layouts/HomeLayouts";
+import History from "../Page/DashBoard/History";
+import Enrolled from "../Page/DashBoard/Enrolled";
 
 export const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
         children: [
+            {
+                path: '/',
+                element: <Navigate to="/home"></Navigate>
+            },
+            ,
             {
                 path: '/login',
                 element: <Login></Login>
@@ -35,10 +44,14 @@ export const router = createBrowserRouter([
                 element: <ClassesPage></ClassesPage>
             },
             {
-                path: 'Instructors',
+                path: 'instructors',
                 element: <Instructors></Instructors>
             }
         ]
+    },
+    {
+        path: 'home',
+        element: <HomeLayouts></HomeLayouts>
     },
     {
         path: 'dashboard',
@@ -63,6 +76,14 @@ export const router = createBrowserRouter([
             {
                 path: 'payment',
                 element: <Payment></Payment>
+            },
+            {
+                path: 'history',
+                element: <History></History>
+            },
+            {
+                path: 'enrolled',
+                element: <Enrolled></Enrolled>
             }
         ]
     }

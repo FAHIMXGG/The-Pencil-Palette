@@ -8,7 +8,7 @@ import useAuth from '../../hooks/useAuth';
 
 const Dashboard = () => {
     const [cart] = useCart()
-    const {user} = useAuth()
+    const { user } = useAuth()
     console.log(user.email)
 
 
@@ -56,22 +56,23 @@ const Dashboard = () => {
                                 <li><NavLink to="/dashboard/courseManage">Course Manage</NavLink></li>
                             </> :
                                 isInstructor ? <>
-                                    <li><NavLink to="/">Ins</NavLink></li><li><NavLink to="/dashboard/cart"><FaShoppingCart></FaShoppingCart>Cart +{cart?.length}</NavLink></li>
-                                    <li><NavLink to="/dashboard/add">Add</NavLink></li>
-                                    <li><NavLink to="/dashboard/allusers">Users</NavLink></li>
-                                    <li><NavLink to="/dashboard/courseManage">Course Manage</NavLink></li>
+                                    <li><NavLink to="/">Instructor Dashboard</NavLink></li>
+                                    {/* <li><NavLink to="/dashboard/cart"><FaShoppingCart></FaShoppingCart>Cart +{cart?.length}</NavLink></li> */}
+                                    <li><NavLink to="/dashboard/add">Add a Class</NavLink></li>
+                                    <li><NavLink to="/dashboard/allusers">My class</NavLink></li>
+
                                 </> : <>
                                     <li><NavLink to="/">Home</NavLink></li><li><NavLink to="/dashboard/cart"><FaShoppingCart></FaShoppingCart>Cart +{cart?.length}</NavLink></li>
-                                    <li><NavLink to="/dashboard/add">Add</NavLink></li>
+                                    <li><NavLink to="/dashboard/history">History</NavLink></li>
+                                    <li><NavLink to="/dashboard/enrolled">My Enrolled Classes</NavLink></li>
                                 </>
                         }
 
                         <div className='divider'></div>
 
-                        <li><NavLink to="/">h</NavLink></li>
-                        <li><NavLink to="/">h</NavLink></li>
-                        <li><NavLink to="/">h</NavLink></li>
-                        <li><NavLink to="/">h</NavLink></li>
+                        <li><NavLink to="/">Home</NavLink></li>
+                        <li><NavLink to="/Instructors"> Instructors</NavLink></li>
+                        <li><NavLink to="/course">Classes</NavLink></li>
                     </ul>
 
                 </div>

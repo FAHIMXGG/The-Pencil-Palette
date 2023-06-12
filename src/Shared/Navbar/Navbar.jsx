@@ -8,6 +8,8 @@ const Navbar = () => {
     const [cart] = useCart()
     console.log(cart)
 
+    
+
     const handleLogOut = () => {
         logOut()
             .then(() => { })
@@ -35,7 +37,7 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="Instructors"> Instructors</Link></li>
+                        <li><Link to="/instructors"> Instructors</Link></li>
                         <li><Link to="/course">Classes</Link></li>
                     </ul>
                 </div>
