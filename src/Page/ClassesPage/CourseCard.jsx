@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
 
 const CourseCard = ({course}) => {
-    console.log(course)
+    //console.log(course)
     const {name, image, _id, seats, instructors, price,  students } = course
     const {user} =useContext(AuthContext)
     

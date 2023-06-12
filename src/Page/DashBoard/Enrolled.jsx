@@ -7,8 +7,8 @@ const Enrolled = () => {
     const [history] = useHistory()
     console.log(history);
     return (
-        <div>
-            <div className='grid grid-cols-3'>
+        <div className='lg:mt-40 lg:mb-40'>
+            <div className='grid grid-cols-3 gap-10'>
                 {
                     history.map(course => <div
                         key={course._id}

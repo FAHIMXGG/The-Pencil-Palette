@@ -48,9 +48,11 @@ const Course = () => {
                         <tr>
                             <th>#</th>
                             <th>Item</th>
+                            <th>Item</th>
                             <th>Price</th>
                             <th>Update</th>
                             <th>Delete</th>
+                            
                         </tr>
                     </thead>
                     <tbody>

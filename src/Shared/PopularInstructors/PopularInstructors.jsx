@@ -9,7 +9,7 @@ const PopularInstructors = () => {
     );
 
 
-    console.log(byClass)
+    //console.log(byClass)
     return (
         <>
         <div>

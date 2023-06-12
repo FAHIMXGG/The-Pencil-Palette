@@ -11,9 +11,9 @@ const Payment = () => {
     const total = cart.reduce((sum, item) => sum + item.price, 0);
     const price = parseFloat(total.toFixed(2))
     return (
-        <div>
+        <div className='lg:mt-40 lg:mb-40'>
             
-            <h2 className="text-3xl"> Teka o teka tumi uira uira aso...</h2>
+            <h2 className="text-3xl">  Make Payments with Stripe</h2>
             <Elements stripe={stripePromise}>
                 <CheckOutForm cart={cart} price={price}></CheckOutForm>
             </Elements>

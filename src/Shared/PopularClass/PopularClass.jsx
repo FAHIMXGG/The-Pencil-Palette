@@ -10,7 +10,7 @@ const PopularClass = () => {
     - a.students
     );
 
-    console.log(byClass)
+    //console.log(byClass)
     return (
         <div>
             <h1 className='text-center mt-10  text-4xl font-bold mb-10'>Popular Classes</h1>

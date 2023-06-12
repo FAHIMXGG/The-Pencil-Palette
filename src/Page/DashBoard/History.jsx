@@ -30,7 +30,7 @@ const History = () => {
         }
     }
     return (
-        <div className='w-full'>
+        <div className='w-full lg:mt-40 lg:mb-40'>
             <div className='flex justify-evenly'>
                 <h3 className='text-3xl'>Total: {history.length}</h3>
 

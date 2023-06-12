@@ -7,7 +7,7 @@ import useIns from '../../hooks/useIns';
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     const [cart] = useCart()
-    console.log(cart)
+    //console.log(cart)
 
     const [isInstructor] = useIns();
 

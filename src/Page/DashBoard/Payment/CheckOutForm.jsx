@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import './CheckOutFrom.css'
+import Swal from 'sweetalert2';
 
 const CheckOutForm = ({ cart, price }) => {
     const stripe = useStripe();
@@ -93,8 +94,16 @@ const CheckOutForm = ({ cart, price }) => {
             axiosSecure.post('/payments', payment)
                 .then(res => {
                     console.log(res.data);
-                    if (res.data.result.insertedId) {
-                        // display confirm
+                    if (res.data.insertResult.insertedId) {
+                        Swal.fire({
+                            title: 'Payment Successfully Done',
+                            showClass: {
+                              popup: 'animate__animated animate__fadeInDown'
+                            },
+                            hideClass: {
+                              popup: 'animate__animated animate__fadeOutUp'
+                            }
+                          })
                     }
                 })
         }

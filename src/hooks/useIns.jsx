@@ -10,7 +10,7 @@ const useIns = () => {
         queryKey: ['instructor', user?.email],
         queryFn: async () =>{
             const res = await axiosSecure.get(`/users/ins/${user?.email}`);
-            console.log('is ins res', res)
+            //console.log('is ins res', res)
             return res.data.instructor
         }
     })

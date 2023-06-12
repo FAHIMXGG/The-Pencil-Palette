@@ -7,7 +7,7 @@ import useAxiosSecure from './useAxiosSecure';
 
 const useCart = () => {
     const { user, loading } = useContext(AuthContext);
-    console.log(user)
+    //console.log(user)
     //const token = localStorage.getItem('access-token')
     const [axiosSecure] = useAxiosSecure();
 
