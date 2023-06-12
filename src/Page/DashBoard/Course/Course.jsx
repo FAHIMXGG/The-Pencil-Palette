@@ -39,7 +39,7 @@ const Course = () => {
     }
     return (
         <div className="w-full">
-            <Link to='/dashboard/add'><button className='btn'>Add</button></Link>
+            
 
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
