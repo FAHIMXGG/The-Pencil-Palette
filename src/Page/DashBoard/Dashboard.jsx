@@ -5,12 +5,13 @@ import useCart from '../../hooks/useCart';
 import useAdmin from '../../hooks/useAdmin';
 import useIns from '../../hooks/useIns';
 import useAuth from '../../hooks/useAuth';
+import useTitle from '../../hooks/UseTitle';
 
 const Dashboard = () => {
     const [cart] = useCart()
     const { user } = useAuth()
     console.log(user.email)
-
+    useTitle('The Pencil Palette | DashBoard')
 
     const [isInstructor, setIsInstructor] = useState(false);
     const email = user.email // Replace with the desired email

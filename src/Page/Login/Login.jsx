@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
+import useTitle from '../../hooks/UseTitle';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
@@ -12,6 +13,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
+    useTitle('The Pencil Palette | Login')
 
     const onSubmit = data => {
         signIn(data.email, data.password)

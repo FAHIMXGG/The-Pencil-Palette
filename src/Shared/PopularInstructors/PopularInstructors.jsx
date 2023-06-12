@@ -1,5 +1,6 @@
 import React from 'react';
 import useInstructors from '../../hooks/useInstructors';
+import { Hinge, Zoom } from 'react-awesome-reveal';
 
 const PopularInstructors = () => {
     const [instructor, , refetch] = useInstructors()
@@ -13,9 +14,9 @@ const PopularInstructors = () => {
     return (
         <>
         <div>
-        <h1 className='text-center mt-10 text-4xl font-bold'>Popular Instructors</h1>
+        <Zoom><h1 className='text-center mt-10 text-4xl font-bold'>Popular Instructors</h1></Zoom>
         </div>
-        <div className='grid gap-10 lg:mt-20 grid-cols-3 mb-20 lg:mb-52'>
+       <Zoom> <div className='justify-items-center grid gap-10 lg:mt-20 lg:grid-cols-3 mb-20 lg:mb-52'>
             {
                 byClass.slice(0, 6).map(data =>
                     <div key={data._id} className=" card w-96 bg-base-100 shadow-xl">
@@ -34,7 +35,7 @@ const PopularInstructors = () => {
                     </div>
                 )
             }
-        </div>
+        </div></Zoom>
         </>
     );
 };

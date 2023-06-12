@@ -1,11 +1,15 @@
 import React from 'react';
 import useInstructors from '../../hooks/useInstructors';
+import { Slide } from 'react-awesome-reveal';
+import useTitle from '../../hooks/UseTitle';
 
 const Instructors = () => {
+    useTitle('The Pencil Palette | Error')
     const [instructor, , refetch] = useInstructors()
     console.log(instructor)
     return (
         <div className='grid gap-6 lg:mt-52 grid-cols-4 mb-20 lg:mb-52'>
+            <Slide>
             {
                 instructor.map(data =>
                     <div key={data._id} className=" card w-96 bg-base-100 shadow-xl">
@@ -23,6 +27,7 @@ const Instructors = () => {
                     </div>
                 )
             }
+            </Slide>
         </div>
     );
 };

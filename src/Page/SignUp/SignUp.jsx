@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 import { AuthContext } from "../../Provider/AuthProvider";
+import useTitle from "../../hooks/UseTitle";
 
 
 const SignUp = () => {
@@ -10,6 +11,7 @@ const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser, updateUserData } = useContext(AuthContext);
     const navigate = useNavigate();
+    useTitle('The Pencil Palette | SighUp')
 
     const onSubmit = data => {
         console.log(data);

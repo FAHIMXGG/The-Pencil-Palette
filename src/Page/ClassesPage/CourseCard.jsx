@@ -3,6 +3,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
+import { Slide } from 'react-awesome-reveal';
 
 const CourseCard = ({course}) => {
     //console.log(course)
@@ -54,6 +55,7 @@ const CourseCard = ({course}) => {
     }
     return (
         <div>
+            <Slide>
             <div className="card card-compact w-96 bg-base-100 shadow-xl">
                 <figure><img src={image} alt="Shoes" /></figure>
                 <div className="card-body">
@@ -67,6 +69,7 @@ const CourseCard = ({course}) => {
                     </div>
                 </div>
             </div>
+            </Slide>
         </div>
     );
 };
