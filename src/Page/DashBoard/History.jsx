@@ -11,7 +11,7 @@ const History = () => {
     const handleDelete = id => {
         const proceed = confirm('Are You sure you want to delete');
         if (proceed) {
-            fetch(`http://localhost:5000/history/${id}`, {
+            fetch(`https://ass-12-server-rose.vercel.app/history/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

@@ -21,6 +21,7 @@ import HomeLayouts from "../Layouts/HomeLayouts";
 import History from "../Page/DashBoard/History";
 import Enrolled from "../Page/DashBoard/Enrolled";
 import ErrorPage from "../Page/ErrorPage/ErrorPage";
+import MyClass from "../Page/DashBoard/MyClass/MyClass";
 
 export const router = createBrowserRouter([
     {
@@ -86,7 +87,12 @@ export const router = createBrowserRouter([
             {
                 path: 'enrolled',
                 element: <Enrolled></Enrolled>
+            },
+            {
+                path: 'myclass',
+                element: <MyClass></MyClass>
             }
+        
         ]
     }
 ])

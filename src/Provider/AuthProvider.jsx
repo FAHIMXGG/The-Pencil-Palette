@@ -73,7 +73,7 @@ const AuthProvider = ({children}) => {
 
             //for JWt/ Axios
             if(loggedUser){
-                axios.post('http://localhost:5000/jwt', {email: loggedUser.email})
+                axios.post('https://ass-12-server-rose.vercel.app/jwt', {email: loggedUser.email})
                 .then(data =>{
                     console.log(data.data.token)
                     localStorage.setItem('access-token', data.data.token)

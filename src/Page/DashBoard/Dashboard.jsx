@@ -16,7 +16,7 @@ const Dashboard = () => {
     const email = user.email // Replace with the desired email
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/ins/${email}`)
+        fetch(`https://ass-12-server-rose.vercel.app/users/ins/${email}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
@@ -59,7 +59,7 @@ const Dashboard = () => {
                                     <li><NavLink to="/">Instructor Dashboard</NavLink></li>
                                     {/* <li><NavLink to="/dashboard/cart"><FaShoppingCart></FaShoppingCart>Cart +{cart?.length}</NavLink></li> */}
                                     <li><NavLink to="/dashboard/add">Add a Class</NavLink></li>
-                                    <li><NavLink to="/dashboard/allusers">My class</NavLink></li>
+                                    <li><NavLink to="/dashboard/myclass">My class</NavLink></li>
 
                                 </> : <>
                                     <li><NavLink to="/">Home</NavLink></li><li><NavLink to="/dashboard/cart"><FaShoppingCart></FaShoppingCart>Cart +{cart?.length}</NavLink></li>

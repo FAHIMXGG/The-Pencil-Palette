@@ -5,7 +5,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
 
 const CourseCard = ({course}) => {
-    const {name, image, _id, available_seats , instructor_name, price   } = course
+    console.log(course)
+    const {name, image, _id, seats, instructors, price   } = course
     const {user} =useContext(AuthContext)
     
     const navigate = useNavigate()
@@ -14,8 +15,8 @@ const CourseCard = ({course}) => {
     const handleAddToCart = course => {
         
         if(user && user.email){
-            const orderItem = {courseItemId: _id, name, image, price, available_seats , instructor_name, email: user.email}
-            fetch('http://localhost:5000/carts',{
+            const orderItem = {courseItemId: _id, name, image, price, seats , instructors, email: user.email}
+            fetch('https://ass-12-server-rose.vercel.app/carts',{
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -57,11 +58,11 @@ const CourseCard = ({course}) => {
                 <figure><img src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
-                    <p>{instructor_name}</p>
-                    <p>{available_seats}</p>
+                    <p>{instructors}</p>
+                    <p>Remaining Seats: {seats}</p>
                     <div className="card-actions justify-end">
                         <p>Fee: {price}$</p>
-                        <button onClick={() => handleAddToCart(course)} className="btn btn-primary">Buy Now</button>
+                        <button onClick={() => handleAddToCart(course)} className="btn btn-primary">Enroll Now</button>
                     </div>
                 </div>
             </div>

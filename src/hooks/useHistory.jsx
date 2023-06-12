@@ -13,7 +13,7 @@ const useHistory = () => {
         queryKey: ['history', user?.email],
         enabled: !loading,
         // queryFn: async () =>{
-        //     const res = await fetch(`http://localhost:5000/carts?email=${user?.email}`, {headers: {
+        //     const res = await fetch(`https://ass-12-server-rose.vercel.app/carts?email=${user?.email}`, {headers: {
         //         authorization: `bearer ${token}`
         //     }})
         //     return res.json()

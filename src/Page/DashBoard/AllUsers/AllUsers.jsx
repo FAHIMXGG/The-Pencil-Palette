@@ -12,7 +12,7 @@ const AllUsers = () => {
     })
 
     const handleMakeAdmin = user => {
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`https://ass-12-server-rose.vercel.app/users/admin/${user._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -31,7 +31,7 @@ const AllUsers = () => {
             })
     }
     const handleMakeIns = user => {
-        fetch(`http://localhost:5000/users/ins/${user._id}`, {
+        fetch(`https://ass-12-server-rose.vercel.app/users/ins/${user._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
