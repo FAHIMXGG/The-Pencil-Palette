@@ -6,7 +6,7 @@ import useCart from '../../hooks/useCart';
 
 const CourseCard = ({course}) => {
     console.log(course)
-    const {name, image, _id, seats, instructors, price   } = course
+    const {name, image, _id, seats, instructors, price,  students } = course
     const {user} =useContext(AuthContext)
     
     const navigate = useNavigate()
@@ -60,6 +60,7 @@ const CourseCard = ({course}) => {
                     <h2 className="card-title">{name}</h2>
                     <p>{instructors}</p>
                     <p>Remaining Seats: {seats}</p>
+                    <p>Total Enrolled: {students}</p>
                     <div className="card-actions justify-end">
                         <p>Fee: {price}$</p>
                         <button onClick={() => handleAddToCart(course)} className="btn btn-primary">Enroll Now</button>

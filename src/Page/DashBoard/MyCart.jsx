@@ -3,10 +3,12 @@ import useCart from '../../hooks/useCart';
 import { FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const MyCart = () => {
     const [cart, refetch] = useCart()
     const total = cart.reduce((sum, item) => item.price + sum, 0)
+    const [axiosSecure] = useAxiosSecure()
 
     const handleDelete = data => {
         Swal.fire({
@@ -20,7 +22,7 @@ const MyCart = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axiosSecure.delete(`/menu/${item._id}`)
+                axiosSecure.delete(`/carts/${data._id}`)
                     .then(res => {
                         console.log('deleted res', res.data);
                         if (res.data.deletedCount > 0) {

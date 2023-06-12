@@ -4,6 +4,7 @@ import Slider from '../Shared/Slider/Slider';
 import PopularClass from '../Shared/PopularClass/PopularClass';
 import Art from '../Shared/Art/Art';
 import Footer from '../Shared/Footer/Footer';
+import PopularInstructors from '../Shared/PopularInstructors/PopularInstructors';
 
 const HomeLayouts = () => {
     return (
@@ -11,6 +12,7 @@ const HomeLayouts = () => {
             <Navbar></Navbar>
             <Slider></Slider>
             <PopularClass></PopularClass>
+            <PopularInstructors></PopularInstructors>
             <Art></Art>
             <Footer></Footer>
         </div>
